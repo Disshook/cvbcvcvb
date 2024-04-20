@@ -11,6 +11,7 @@ export const getAllData = async () => {
     const comment = await getComment();
     const category = await getCategories();
     const tip = await getTip();
+    const carousel = await getCarousel();
     // const additional = await getAdditional();
     return {
       category: category.data,
@@ -20,6 +21,7 @@ export const getAllData = async () => {
       comment: comment.data,
       assistant: assistant.data,
       tip: tip.data,
+      carousel: carousel.data,
       // additional: additional.data,
     };
   } catch (error) {
@@ -140,6 +142,15 @@ export const getTip = async () => {
 export const getAdditional = async () => {
   try {
     const response = await axiosInstance.get(`/additional`);
+    return response.data;
+  } catch (error) {
+    console.error("Failed to fetch data:", error.message);
+    throw error;
+  }
+};
+export const getCarousel = async () => {
+  try {
+    const response = await axiosInstance.get(`/carousel`);
     return response.data;
   } catch (error) {
     console.error("Failed to fetch data:", error.message);

@@ -1,8 +1,7 @@
-/** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: false,
   images: {
-    domains: [".tanuweb.cloud", "localhost", "arvai.tanuweb.cloud"],
+    domains: ["emt.tanuweb.cloud", "localhost"],
   },
   i18n: {
     locales: ["en", "mn", "kr", "chn", "jp"],

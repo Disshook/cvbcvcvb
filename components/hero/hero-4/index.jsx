@@ -3,22 +3,8 @@ import { Navigation } from "swiper";
 import "swiper/css"; // Ensure you import Swiper styles
 import "swiper/css/navigation";
 import Image from "next/image";
-import img from "../../../public/images.jpg";
-import img1 from "../../../public/images1.jpg";
-import img2 from "../../../public/images2.jpg";
-import img3 from "../../../public/images3.jpg";
-import img4 from "../../../public/images4.jpg";
-
-
-const Index = () => {
-  const data = [
-    { id: 1, img: img, name: "Chinese" },
-    { id: 2, img: img1, name: "Монгол" },
-    { id: 3, img: img2, name: "Korean" },
-    { id: 4, img: img3, name: "Japan" },
-    { id: 5, img: img4, name: "Canada" }
-  ];
-
+export const imgUrl = "https://emt.tanuweb.cloud";
+const Index = ({ data }) => {
   return (
     <section className="masthead -type-4">
       <div className="masthead-slider overflow-x-hidden">
@@ -31,12 +17,28 @@ const Index = () => {
             prevEl: ".hero4-prev-active",
           }}
         >
-          {data.map((item) => (
-            <SwiperSlide key={item.id}>
-              <div className="masthead__image" style={{ position: 'relative', width: '100%', height: '100%' }}>
-                <Image src={item.img} alt={item.name} layout="fill" objectFit="cover" />
-                <div style={{ position: "absolute", bottom: "100px", left: '100px', color: "white", zIndex: 10 }}>
-                  <h2>{item.name}</h2>
+          {data?.map((item, i) => (
+            <SwiperSlide key={i}>
+              <div
+                className="masthead__image"
+                style={{ position: "relative", width: "100%", height: "100%" }}
+              >
+                <Image
+                  src={`${imgUrl}/uploads/${item?.photo1}`}
+                  alt="sad"
+                  layout="fill"
+                  objectFit="cover"
+                />
+                <div
+                  style={{
+                    position: "absolute",
+                    bottom: "100px",
+                    left: "100px",
+                    color: "white",
+                    zIndex: 10,
+                  }}
+                >
+                  <h2>{item.text}</h2>
                 </div>
               </div>
             </SwiperSlide>

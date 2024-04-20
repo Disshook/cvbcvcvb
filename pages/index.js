@@ -51,7 +51,7 @@ const Home2 = () => {
       <Header1 />
 
       {/* End Header 2 */}
-      <Hero1 />
+      <Hero1 data={data?.carousel} />
       {/* End Hero 2 */}
 
       <section className="layout-pt-md ">
@@ -171,7 +171,6 @@ const Home2 = () => {
       </section>
 
       <Footer2 />
-
     </>
   );
 };
