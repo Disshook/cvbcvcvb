@@ -1,0 +1,33 @@
+.sectionTitle {
+  &__title {
+  }
+
+  &__line-clamp{
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* number of lines to show */
+    -webkit-box-orient: vertical;
+  }
+
+  &__text {}
+
+  &.-md {
+    .sectionTitle {
+      &__title {
+        font-size: var(--text-30);
+
+        @include media-below(md) {
+          font-size: var(--text-26);
+        }
+      }
+    }
+  }
+
+  &.-lg {
+    .sectionTitle {
+      &__title {
+        font-size: var(--text-40);
+      }
+    }
+  }
+}
