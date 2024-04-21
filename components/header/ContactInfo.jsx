@@ -1,16 +1,19 @@
+import { Translate } from "../translate";
+
 const ContactInfo = () => {
+  const t = Translate().use;
   const contactContent = [
     {
       id: 1,
-      title: "Холбогдох",
-      action: "tel:+(976) 9900 6299",
-      text: "+(976) 9900 6299",
+      title: `${t.touch}`,
+      action: "tel:+(976)95954827, 70153399",
+      text: "+(976) 95954827, 70153399",
     },
     {
       id: 2,
-      title: "Холбогдох",
-      action: "mailto:arvaitour@gmail.com",
-      text: "arvaitour@gmail.com",
+      title: `${t.email}`,
+      action: "EMTEXTENSIVEMON@GMAIL.COM",
+      text: "EMTEXTENSIVEMON@GMAIL.COM",
     },
   ];
   return (

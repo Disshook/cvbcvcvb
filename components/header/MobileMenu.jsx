@@ -16,7 +16,7 @@ const MobileMenu = () => {
     <>
       <div className="pro-header d-flex align-items-center justify-between border-bottom-light">
         <Link href="/">
-          <img src="/img/booking-pages/arvai..png" alt="brand" />
+          <img src="/logog.png" alt="brand" />
         </Link>
         {/* End logo */}
 
