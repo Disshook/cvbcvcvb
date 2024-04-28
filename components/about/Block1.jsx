@@ -2,14 +2,15 @@ import Image from "next/image";
 import { Translate } from "../translate";
 
 const Block1 = ({ data }) => {
+  console.log(data);
   const t = Translate().use;
   return (
     <>
       <div className="col-lg-5">
-        <h2 className="text-30 fw-600">asd Tour</h2>
+        <h2 className="text-30 fw-600">Extensive mongolia Tour</h2>
         <div
           style={{ color: "black" }}
-          dangerouslySetInnerHTML={{ __html: data?.text }}
+          dangerouslySetInnerHTML={{ __html: data?.[0]?.text }}
         />
       </div>
 
@@ -17,7 +18,7 @@ const Block1 = ({ data }) => {
         <Image
           width={400}
           height={400}
-          src={`https://emt.tanuweb.cloud/uploads/${data?.cover}`}
+          src={`https://emt.tanuweb.cloud/uploads/${data?.[0]?.cover}`}
           alt="image"
           className="rounded-4 w-100"
         />

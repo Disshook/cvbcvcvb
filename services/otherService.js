@@ -12,7 +12,7 @@ export const getAllData = async () => {
     const category = await getCategories();
     const tip = await getTip();
     const carousel = await getCarousel();
-    // const additional = await getAdditional();
+    const additional = await getAdditional();
     return {
       category: category.data,
       travel: travel.data,
@@ -22,7 +22,7 @@ export const getAllData = async () => {
       assistant: assistant.data,
       tip: tip.data,
       carousel: carousel.data,
-      // additional: additional.data,
+      additional: additional.data,
     };
   } catch (error) {
     console.error("Failed to fetch data:", error.message);

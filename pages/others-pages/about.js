@@ -72,7 +72,7 @@ const About = () => {
       <section className="layout-pt-md">
         <div className="container">
           <div className="row y-gap-30 justify-between items-center">
-            <Block1 data={photo} />
+            <Block1 data={data.additional} />
           </div>
         </div>
       </section>
