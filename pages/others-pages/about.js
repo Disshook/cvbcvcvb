@@ -34,26 +34,21 @@ const About = () => {
   return (
     <>
       <Seo pageTitle={t.about} />
-      {/* End Page Title */}
+
 
       <div className="header-margin"></div>
-      {/* header top margin */}
 
       <DefaultHeader />
-      {/* End Header 1 */}
-
       <section className="section-bg layout-pt-lg layout-pb-lg">
         <div className="section-bg__item col-12">
           <Image
             width={1920}
             height={400}
-            src="/cover.jpg"
+            src={`https://emt.tanuweb.cloud/uploads/${photo?.cover}`}
             alt="image"
             priority
           />
         </div>
-        {/* End section-bg__item */}
-
         <div className="container">
           <div className="row justify-center text-center">
             <div className="col-xl-6 col-lg-8 col-md-10">
@@ -64,11 +59,7 @@ const About = () => {
             </div>
           </div>
         </div>
-        {/* End .container */}
       </section>
-      {/* End About Banner Section */}
-      {/* End Why Choose Us section */}
-
       <section className="layout-pt-md">
         <div className="container">
           <div className="row y-gap-30 justify-between items-center">
@@ -94,22 +85,15 @@ const About = () => {
               </div>
             </div>
           </div>
-          {/* End .row */}
+
 
           <div className="overflow-hidden  js-section-slider">
             <div className="item_gap-x30">
               <Document />
             </div>
           </div>
-
-          {/* End .overflow-hidden */}
-
-          {/* End .row */}
         </div>
-        {/* End .container */}
       </section>
-      {/* End counter Section */}
-      {/* End team section */}
 
       <section className="section-bg layout-pt-md ">
         <div className="section-bg__item -mx-20 bg-light-2" />
@@ -134,9 +118,7 @@ const About = () => {
             {/* End .col */}
             {/* End .col */}
           </div>
-          {/* End .row */}
         </div>
-        {/* End .container */}
       </section>
       {/* End testimonial section */}
       <section className="section-bg layout-pt-sm ">

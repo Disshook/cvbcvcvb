@@ -17,11 +17,14 @@ import { useState, useEffect } from "react";
 import { useMyContext } from "../context/globalContext";
 import { useRouter } from "next/router";
 import Facebook from "../components/Facebook/Facebook";
+import AddBanner from "../components/home/home-3/AddBanner";
+import Link from "next/link";
 const Home2 = () => {
   const { isLoading, setLoading } = useMyContext();
   const t = Translate().use;
   const { locale, push, asPath } = useRouter();
   const [data, setData] = useState([]);
+  const [hover, setHover] = useState(false);
   useEffect(() => {
     setLoading(true);
     Service.all()
@@ -54,18 +57,36 @@ const Home2 = () => {
       <Hero1 data={data?.carousel} />
       {/* End Hero 2 */}
 
-      <section className="layout-pt-md ">
+      <section className="layout-pt-lg layout-pb-md">
         <div className="container">
-          <div className="col-auto">
-            <div className="sectionTitle -md">
-              <h2 className="sectionTitle__title">{t.tip}</h2>
-              <p className=" sectionTitle__text mt-5 sm:mt-0">{t.tip_text}</p>
+          <div className="row y-gap-20 justify-between items-end">
+            <div className="col-auto">
+              <div className="sectionTitle -md">
+                <h2 className="sectionTitle__title">{t.lolo}</h2>
+                <p className=" sectionTitle__text mt-5 sm:mt-0">
+                  {t.event_title}
+                </p>
+              </div>
+            </div>
+            <div className="col-auto">
+              <Link
+                href="/tip/tip-list"
+                className="button -md bg-blue-1-05"
+                style={{
+                  color: hover ? "white" : "black",
+                  backgroundColor: "red",
+                  backgroundColor: hover ? "#abb2b9" : "#f0f0f0",
+                  border: "20px",
+                }}
+                onMouseEnter={() => setHover(true)}
+                onMouseLeave={() => setHover(false)}
+              >
+                {t.learn_more} <div className="icon-arrow-top-right ml-15" />
+              </Link>
             </div>
           </div>
-          <div className="row  sm:y-gap-10 justify-between">
-            <BlockGuide
-              data={data?.tip?.filter((el) => el.language === locale)}
-            />
+          <div className="row y-gap-20 pt-40">
+            <AddBanner data={data.event} />
           </div>
         </div>
       </section>

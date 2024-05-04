@@ -14,7 +14,11 @@ const index = () => {
               <h5 className="text-16 fw-500 mb-30">{t.contact}</h5>
               <ContactInfo />
             </div>
-            {/* End col */}
+            <div className="col-xl-2 col-lg-4 col-sm-6">
+              <h5 className="text-16 fw-500 mb-30">{t.address}</h5>
+              {t.address_text}
+              <div className="d-flex y-gap-10 flex-column"></div>
+            </div>
 
             <FooterContent />
             {/* End footer menu content */}

@@ -79,7 +79,7 @@ export default {
   about_bigtext: "우리에 관한 간략한 소개",
   address: "주소",
   address_text:
-    "30th khoroo, Bayanzurkh district, Star apartment, 40-43. 울란바토르, 몽골",
+    "Bayanzurkh 지구, 3rd khoroo, Tokyo AT, Peace avenue, 울란바토르, 몽골",
   overview: "개요",
   footertit: "비슷한 여행",
   footertiti:
@@ -103,4 +103,5 @@ export default {
   startpoint: "출발 지점",
   endpoint: "도착 지점",
   travel: "여행",
+  lolo: "이벤트",
 };

@@ -2,12 +2,13 @@ import Image from "next/image";
 import Link from "next/link";
 import blogsData from "../../data/blogs";
 
-const Blog2 = () => {
+const Blog2 = ({ data }) => {
+  console.log(data);
   return (
     <>
-      {blogsData.slice(4, 9).map((item) => (
+      {data?.slice(0, 4).map((item) => (
         <Link
-          href={`/blog/blog-details/${item.id}`}
+          href={`/tip/tip-detail/${item._id}`}
           className="blogCard -type-1 col-12"
           key={item.id}
         >
@@ -18,7 +19,7 @@ const Blog2 = () => {
                   width={250}
                   height={250}
                   className="cover w-100 img-fluid"
-                  src={item.img}
+                  src={`https://emt.tanuweb.cloud/uploads/${item?.photo}`}
                   alt="image"
                 />
               </div>

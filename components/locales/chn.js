@@ -77,7 +77,7 @@ export default {
   about_bigtext: "关于我们的简介",
   advinter: "旅行评论",
   address: "地址",
-  address_text: "巴彦祖尔赫区，30个可走动的区域，星级公寓，40-43.蒙古乌兰巴托",
+  address_text: "巴彦祖尔赫区, 3rd khoroo, Tokyo AT, 和平大道, 乌兰巴托, 蒙古",
   overview: "概览",
   footertit: "类似的旅行",
   footertiti: "与我们有经验的外国旅行顾问合作多年的合作外国旅游公司发展",
@@ -100,4 +100,5 @@ export default {
   startpoint: "起点",
   endpoint: "终点",
   travel: "旅行",
+  lolo: "事件",
 };

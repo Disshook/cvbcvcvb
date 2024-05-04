@@ -51,6 +51,11 @@ const MainMenu = ({ style = "", data = [] }) => {
         >
           <Link href="/blog/blog-list-v1">{t.news}</Link>
         </li>
+        <li
+          className={router.pathname === "/tip/tip-list" ? "current" : ""}
+        >
+          <Link href="/tip/tip-list">{t.lolo}</Link>
+        </li>
         {/* End pages items */}
 
         <li className={router.pathname === "/contact" ? "current" : ""}>

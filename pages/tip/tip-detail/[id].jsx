@@ -20,19 +20,19 @@ const BlogSingleDynamic = () => {
   const t = Translate().use;
   const router = useRouter();
   const [blog, setBlogItem] = useState("");
-  const [news, setNews] = useState([]);
+  const [event, setEvent] = useState([]);
   const id = router.query.id;
 
   useEffect(() => {
-    Service.single(id, "tip")
+    Service.single(id, "event")
       .then((res) => setBlogItem(res?.data))
       .catch((er) => console.log(er));
-    Service.all().then((res) => setNews(res.news));
+    Service.all().then((res) => setEvent(res.event));
   }, [id]);
 
   return (
     <>
-      <Seo pageTitle="Мэдээ" />
+      <Seo pageTitle={t.event_name} />
       {/* End Page Title */}
       <div className="header-margin"></div>
       {/* header top margin */}
@@ -56,7 +56,7 @@ const BlogSingleDynamic = () => {
                 src={`https://emt.tanuweb.cloud/uploads/${blog?.photo}`}
                 alt={blog?.title}
                 className="col-12 rounded-8  _details"
-                style={{ maxWidth: "400px" }}
+                style={{ maxWidth: "800px" }}
               />
             </div>
           </div>
@@ -80,14 +80,14 @@ const BlogSingleDynamic = () => {
           <div className="row justify-center text-center">
             <div className="col-auto">
               <div className="sectionTitle -md">
-                <h2 className="sectionTitle__title">{t.news}</h2>
+                <h2 className="sectionTitle__title">{t.event_name}</h2>
               </div>
             </div>
           </div>
           {/* End .row */}
 
           <div className="row y-gap-30 pt-40">
-            <RelatedBlog news={news} />
+            <RelatedBlog news={event} />
           </div>
           {/* End .row */}
         </div>

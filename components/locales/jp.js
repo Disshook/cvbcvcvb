@@ -79,7 +79,7 @@ export default {
   about_bigtext: "私たちに関する簡単な紹介",
   address: "住所",
   address_text:
-    "30th khoroo、Bayanzurkh地区、スターアパートメント、40-43. ウランバートル、モンゴル",
+    "バヤンズルク地区、3 ホルー、東京 AT、平和大通り、ウランバートル、モンゴル",
   overview: "概要",
   footertit: "類似の旅行",
   footertiti:
@@ -103,4 +103,5 @@ export default {
   startpoint: "出発地点",
   endpoint: "到着地点",
   travel: "旅行",
+  lolo: "イベント",
 };

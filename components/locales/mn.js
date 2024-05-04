@@ -92,7 +92,7 @@ export default {
   advinter: "Аялагчдын сэтгэдэл",
   address: "Хаяг",
   address_text:
-    "30th khoroo, Bayanzurkh district, Star apartment, 40-43. Ulaanbaatar, Mongolia",
+    "Baynzurkh district, 3rd khoroo, Tokyo ST, Peace avenue, Ulaanbaatar, Mongolia",
   overview: "Тойм",
   footertit: "Төстэй аялалууд",
   footertiti:
@@ -116,4 +116,5 @@ export default {
   startpoint: "Эхлэх газар",
   endpoint: "Дуусах газар",
   travel: "Аялал",
+  lolo: "Арга хэмжээ",
 };

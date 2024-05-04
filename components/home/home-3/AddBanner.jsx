@@ -1,7 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Translate } from "../../translate";
+import { useState } from "react";
 
-const AddBanner = () => {
+const AddBanner = ({ data }) => {
+  const [hoverStates, setHoverStates] = useState(
+    Array(data?.length).fill(false)
+  );
+  const t = Translate().use;
   const addContent = [
     {
       id: 1,
@@ -41,9 +47,21 @@ const AddBanner = () => {
     },
   ];
 
+  const handleMouseEnter = (index) => {
+    const newHoverStates = [...hoverStates];
+    newHoverStates[index] = true;
+    setHoverStates(newHoverStates);
+  };
+
+  const handleMouseLeave = (index) => {
+    const newHoverStates = [...hoverStates];
+    newHoverStates[index] = false;
+    setHoverStates(newHoverStates);
+  };
+
   return (
     <>
-      {addContent.map((item) => (
+      {data?.slice(0, 3)?.map((item, index) => (
         <div
           className="col-lg-4 col-sm-6"
           data-aos="fade"
@@ -56,28 +74,26 @@ const AddBanner = () => {
                 width={410}
                 height={455}
                 className="js-lazy img-ratio"
-                src={item.img}
+                src={`https://emt.tanuweb.cloud/uploads/${item?.photo}`}
                 alt="image"
               />
             </div>
             <div className="ctaCard__content py-50 px-50 lg:py-30 lg:px-30">
-              {item.meta ? (
-                <>
-                  <div className="text-15 fw-500 text-white mb-10">
-                    Enjoy Summer Deals
-                  </div>
-                </>
-              ) : (
-                ""
-              )}
-
-              <h4 className="text-30 lg:text-24 text-white">{item.title}</h4>
+              <h4 className="text-20 lg:text-20 text-white">
+                {item?.title?.slice(0, 55) + "..."}
+              </h4>
               <div className="d-inline-block mt-30">
                 <Link
-                  href={item.routerPath}
-                  className="button px-48 py-15 -blue-1 -min-180 bg-white text-dark-1"
+                  href={`/tip/tip-detail/${item._id}`}
+                  className="button px-48 py-15  -min-180  "
+                  style={{
+                    color: hoverStates[index] ? "white" : "black",
+                    backgroundColor: hoverStates[index] ? "#abb2b9" : "#f0f0f0",
+                  }} // Added inline styles here
+                  onMouseEnter={() => handleMouseEnter(index)}
+                  onMouseLeave={() => handleMouseLeave(index)}
                 >
-                  Experiences
+                  {t.learn_more}
                 </Link>
               </div>
             </div>
