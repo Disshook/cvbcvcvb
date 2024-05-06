@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Translate } from "../../translate";
 
 const CategoryTourProperties = ({ data }) => {
+  console.log(data);
   const t = Translate().use;
   return (
     <>
@@ -59,6 +60,7 @@ const CategoryTourProperties = ({ data }) => {
 
               <div className="col-md">
                 <div className="row x-gap-10 items-center">
+
                   <div className="col-auto">
                     <p className="text-14 lh-14 mb-5">
                       {t.duration + " "}
@@ -79,6 +81,7 @@ const CategoryTourProperties = ({ data }) => {
                 </div>
                 {/* End .row */}
                 <h3 className="text-16 lh-16 fw-500">
+                  {item?.title}
                   <br />
                 </h3>
                 <p className="text-14 lh-14 mt-5 ">{item?.direction}</p>

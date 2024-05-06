@@ -44,7 +44,7 @@ const About = () => {
           <Image
             width={1920}
             height={400}
-            src={`https://emt.tanuweb.cloud/uploads/${photo?.cover}`}
+            src="/coverimage7.png"
             alt="image"
             priority
           />
